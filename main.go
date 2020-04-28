@@ -20,7 +20,7 @@ func main() {
 	password := "1q2w3e4r5t6y"
 	salt := "84758392058473948573847596"
 
-	cust_id := "1q2w3e4r5t6y7u8i"
+	custID := "1q2w3e4r5t6y7u8i"
 
 	dk := pbkdf2.Key([]byte(password), []byte(salt), 1024, 16, sha1.New)
 
@@ -30,7 +30,7 @@ func main() {
 
 	fmt.Println(len(str4))
 
-	encryptedData := AESEncrypt(cust_id, dk)
+	encryptedData := AESEncrypt(custID, dk)
 
 	// encryptedString := base64.StdEncoding.EncodeToString(encryptedData)
 	fmt.Println(hex.EncodeToString(encryptedData))
